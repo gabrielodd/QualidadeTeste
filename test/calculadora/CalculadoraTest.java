@@ -49,5 +49,39 @@ public class CalculadoraTest {
 		assertThrows(ArithmeticException.class,
 				() -> calc.divisao(8, 0));
 	}
+	@Test
+	public void testMultiplicacao() {
+		int multiplicacao = calc.multiplicacao(3, 3);
+		assertEquals(9, multiplicacao);
+	}
+	
+	@Test
+	public void testSubtracao() {
+		int subtracao = calc.subtracao(3, 3);
+		assertEquals(0, subtracao);
+	}
+	
+	@Test
+	public void testEhPositivo() {
+		boolean positivo = calc.ehPositivo(1);
+		boolean negativo = calc.ehPositivo(-1);
+		assertEquals(true, positivo);
+		assertEquals(false, negativo);
+	}
 
+	@Test
+	public void testSomatoria() {
+		int somatorio = calc.somatoria(10);
+		assertEquals(55, somatorio);
+	}
+	
+	@Test
+	public void testCompara() {
+		int comparaMenor = calc.compara(2, 3);
+		int comparaMaior = calc.compara(3, 2);
+		int comparaIgual = calc.compara(2, 2);
+		assertEquals(-1, comparaMenor);
+		assertEquals(1, comparaMaior);
+		assertEquals(0, comparaIgual);
+	}
 }
